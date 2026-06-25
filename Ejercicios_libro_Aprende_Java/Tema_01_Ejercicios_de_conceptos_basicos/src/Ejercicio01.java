@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-/* Enunciado
+/* Enunciado:
 1.1. Diseñar un programa que pida un número al usuario —por teclado—
 y, a continuación, lo muestre.
- */
+*/
 
 public class Ejercicio01 {
 
