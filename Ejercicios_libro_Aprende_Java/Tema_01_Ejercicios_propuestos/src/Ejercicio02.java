@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 
 
 /* Enunciado:
@@ -8,6 +10,16 @@ cantidad hay que sumarle para que el resultado sea múltiplo de 7. Un ejemplo:
 
 Si proporcionamos el número 2 o el 13, la salida de la aplicación debe ser 5 o 1, respectivamente.
 */
-
+import java.util.Scanner;
 public class Ejercicio02 {
+    public static void main(String[] args) {
+        // Entrada de datos
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce un número entero: ");
+        float numero = sc.nextInt();
+        float resto = numero % 7;
+        float resultado = 7 - resto;
+        System.out.println("Número = " + numero + "\nResto = " + resto + "\nResultado (7 - resto) = " + resultado);
+        sc.close();
+    }
 }
