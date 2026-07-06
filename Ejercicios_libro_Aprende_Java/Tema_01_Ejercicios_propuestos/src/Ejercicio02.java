@@ -1,7 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
-
-
 /* Enunciado:
 1.2. Escribir un programa que tome como entrada un número entero y nos indique qué
 cantidad hay que sumarle para que el resultado sea múltiplo de 7. Un ejemplo:
