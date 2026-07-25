@@ -6,7 +6,7 @@ import java.util.Scanner;
 y lo muestre redondeado al entero más próximo.
 */
 
-public class Ejercicio07 {
+public class Ejercicio07ConceptosBasicos {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce un número con decimales: ");

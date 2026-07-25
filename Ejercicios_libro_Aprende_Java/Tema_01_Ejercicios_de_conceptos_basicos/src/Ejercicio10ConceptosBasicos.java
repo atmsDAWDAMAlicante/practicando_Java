@@ -8,7 +8,7 @@ longitud = 2PI * radio
 área = PI * radio2 (cuadrado)
 */
 
-public class Ejercicio10 {
+public class Ejercicio10ConceptosBasicos {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         double longitud, area;

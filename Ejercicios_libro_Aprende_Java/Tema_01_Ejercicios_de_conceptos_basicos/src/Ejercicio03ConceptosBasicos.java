@@ -6,7 +6,7 @@ import java.time.LocalDate; // Date.getYear() deprecado
 Debe calcular su edad, suponiendo que en el año en curso el usuario ya ha cumplido años.
 */
 
-public class Ejercicio03 {
+public class Ejercicio03ConceptosBasicos {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         LocalDate fecha = LocalDate.now(); // SIN NEW -- RECOGE LA FECHA

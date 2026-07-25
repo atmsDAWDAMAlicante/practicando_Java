@@ -5,7 +5,7 @@
 de la media de tres notas decimales.
 */
 
-public class Ejercicio06 {
+public class Ejercicio06ConceptosBasicos {
     public static void main(String[] args) {
         int nota1 = 10;
         int nota2 = 5;

@@ -9,7 +9,7 @@ La aplicación mostrará el importe total sabiendo que el precio del kilo de man
 está fijado en 2.35 euros y el kilo de peras está fijado en 1.95 euros.
 */
 
-public class Ejercicio08 {
+public class Ejercicio08ConceptosBasicos {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         // Variables

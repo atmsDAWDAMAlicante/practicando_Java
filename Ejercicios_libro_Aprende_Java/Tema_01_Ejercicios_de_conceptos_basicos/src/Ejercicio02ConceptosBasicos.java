@@ -4,7 +4,7 @@ import java.util.Scanner;
 1.2. Pedir al usuario su edad y mostrar la que tendrá el próximo año.
 */
 
-public class Ejercicio02 {
+public class Ejercicio02ConceptosBasicos {
     public static void main(String[] args) {
         // Crear scanner
         Scanner sc = new Scanner(System.in);

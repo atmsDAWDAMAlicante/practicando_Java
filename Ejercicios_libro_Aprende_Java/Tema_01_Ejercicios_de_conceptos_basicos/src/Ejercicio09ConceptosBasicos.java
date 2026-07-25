@@ -9,7 +9,7 @@ y sea la aplicación quien los pida al usuario.
 
 import java.util.Scanner;
 
-public class Ejercicio09 {
+public class Ejercicio09ConceptosBasicos {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         // Variables

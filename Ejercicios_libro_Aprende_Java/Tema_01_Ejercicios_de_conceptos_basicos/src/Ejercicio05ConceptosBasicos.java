@@ -5,7 +5,7 @@
 Hay que tener en cuenta que la media puede contener decimales.
 */
 
-public class Ejercicio05 {
+public class Ejercicio05ConceptosBasicos {
     public static void main(String[] args) {
         float nota1 = 10;
         float nota2 = 5;
