@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-/* Enunciado: VARIACIÓN - LOS NÚMEROS SERÁN ALEATORIOS
+/* Enunciado:
 5.4. Implementar un programa que inicialice una tabla
 con nuestros números favoritos. A continuación, pedir al usuario
 el índice de un elemento que será eliminado de la tabla.
