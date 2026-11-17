@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class CafeyTostadas {
-    public static void creacionHilos() {
+    public static void creacionHilos(){
         // SI ESTÁ EL TRY NO HACE FALTA EL TRHOWS
         // Primero las tostadas en clase aparte
         //prepararTostadas();
@@ -16,6 +16,7 @@ public class CafeyTostadas {
             @Override
             public void run() {
                 try{
+                    Thread.currentThread().setName("Tostadas");
                     Thread yo = Thread.currentThread();
                     yo.setName("Tostadora");
                     VistaOutput.mostrarMensaje("Tostadas: preparar tostadas");
@@ -30,10 +31,6 @@ public class CafeyTostadas {
                     Thread.sleep(1000);
                     VistaOutput.mostrarMensaje("Tostadas: OK");
                     //}
-
-                    if (!yo.isAlive())
-                        VistaOutput.mostrarMensaje("Hilo: " + yo.getName() + " esta " + yo.getState());
-
                 } catch (InterruptedException e){
                     VistaOutput.mostrarError("Tostadas", e);
                 }
@@ -46,13 +43,10 @@ public class CafeyTostadas {
         Thread tContador = new Thread(()->{
             try{
                 Thread.currentThread().setName("Contador");
-                System.out.println("XXXXXXXXXX!"+Thread.currentThread().getName());
                 for (Integer i = 0; i <10; i++){
                     VistaOutput.mostrarMensaje(i.toString());
                     Thread.sleep(1000);
                 }
-                if (!Thread.currentThread().isAlive())
-                    VistaOutput.mostrarMensaje("Hilo: " + Thread.currentThread().getName() + " esta " + Thread.currentThread().getState());
             } catch (InterruptedException e){
                 VistaOutput.mostrarError("main", e);
             }
@@ -67,11 +61,22 @@ public class CafeyTostadas {
             VistaOutput.mostrarError("main", e);
         }
 
+        try {
+            t.join();
+            VistaOutput.mostrarMensaje("Hilo: " + Thread.currentThread().getName() + " esta " + Thread.currentThread().getState());
+            tContador.join();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        // ESTO SUCEDE DESPUÉS DE JOIN
         List<Thread> hilos = new ArrayList<>(List.of(t,tContador));
         // Está mal este casting VistaOutput.mostrarArray((Element)hilos);
         VistaOutput.mostrarArray(hilos);
-        if (!Thread.currentThread().isAlive())
-            VistaOutput.mostrarMensaje("Hilo: " + Thread.currentThread().getName() + " esta " + Thread.currentThread().getState());
+
+        VistaOutput.mostrarMensaje("Hilo: " + tContador.getName() + " esta " + Thread.currentThread().getState());
+
+
 
         /*while (!t.isAlive() && !tContador.isAlive()) {
             for (Thread hilo : hilos) {
