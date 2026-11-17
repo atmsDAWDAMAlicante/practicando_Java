@@ -1,7 +1,9 @@
 package pspRepaso1ev.Modelo;
 import pspRepaso1ev.Vista.VistaOutput;
+import java.util.List;
+import java.util.ArrayList;
 
-public class aCafeTostadas {
+public class CafeyTostadas {
     public static void creacionHilos() {
         // SI ESTÁ EL TRY NO HACE FALTA EL TRHOWS
         // Primero las tostadas en clase aparte
@@ -9,6 +11,8 @@ public class aCafeTostadas {
         //Tostadora t = new Tostadora();
         //Thread t = new Thread(new Tostadora());
         // Abstracta
+
+        // CLASE ABSTRACTA
         Runnable r = new Runnable() {
             @Override
             public void run() {
@@ -31,17 +35,39 @@ public class aCafeTostadas {
             }
         };
 
+        // LAMBDA
         Thread t = new Thread(r);
         t.start();
+        Thread tContador = new Thread(()->{
+            try{
+                for (Integer i = 0; i <10; i++){
+                    VistaOutput.mostrarMensaje(i.toString());
+                    Thread.sleep(1000);
+                }
+            } catch (InterruptedException e){
+                VistaOutput.mostrarError("main", e);
+            }
+        });
+        tContador.start();
+
+        // NORMAL
         try{
             // Segundo el cafe
             prepararCafe();
         } catch (InterruptedException e){
             VistaOutput.mostrarError("main", e);
         }
+
+        List<Thread> hilos = new ArrayList<>(List.of(t,tContador));
+        // Está mal este casting VistaOutput.mostrarArray((Element)hilos);
+        VistaOutput.mostrarArray(hilos);
+        while (!t.isAlive() && !tContador.isAlive()) {
+            for (Thread hilo : hilos) {
+                VistaOutput.mostrarMensaje(hilo.getId() + " / " + hilo.getName() + " / " + hilo.getPriority() + " / " + hilo.getState());
+            }
+        }
+
     }
-
-
 
     public static void prepararCafe() throws InterruptedException{
         VistaOutput.mostrarMensaje("Cafe: preparar cafe");
@@ -54,6 +80,8 @@ public class aCafeTostadas {
         Thread.sleep(1000);
         VistaOutput.mostrarMensaje("Cafe: OK");
     }
+
+
 
 }
 
@@ -77,6 +105,14 @@ class Tostadora implements Runnable {
         //}
         } catch (InterruptedException e){
             VistaOutput.mostrarError("Tostadas", e);
+        }
+    }
+}
+
+class Contador{
+    public static void contar(){
+        for (Integer i = 0; i <10; i++){
+            VistaOutput.mostrarMensaje(i.toString());
         }
     }
 }

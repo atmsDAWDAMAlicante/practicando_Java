@@ -3,13 +3,7 @@ package pspRepaso1ev;
 import pspRepaso1ev.Vista.VistaInput;
 import pspRepaso1ev.Vista.VistaOutput;
 import pspRepaso1ev.Servicios.serviceValidator;
-import pspRepaso1ev.Modelo.*;
-import pspRepaso1ev.Modelo.aCafeTostadas;
-
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.ArrayList;
+import pspRepaso1ev.Modelo.CafeyTostadas;
 
 public class Main {
 
@@ -30,7 +24,7 @@ public class Main {
                     VistaOutput.mostrarMensaje(VistaOutput.menu);
                     break;
                 case 2:
-                    aCafeTostadas.creacionHilos();
+                    CafeyTostadas.creacionHilos();
                     break;
                 case 0:
                     break;
