@@ -7,9 +7,32 @@ public class aCafeTostadas {
         // Primero las tostadas en clase aparte
         //prepararTostadas();
         //Tostadora t = new Tostadora();
-        Thread t = new Thread(new Tostadora());
-        t.start();
+        //Thread t = new Thread(new Tostadora());
+        // Abstracta
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    VistaOutput.mostrarMensaje("Tostadas: preparar tostadas");
+                    Thread.sleep(1000);
+                    VistaOutput.mostrarMensaje("Tostadas: Pan a tostar");
+                    Thread.sleep(1000);
+                    VistaOutput.mostrarMensaje("Tostadas: preparar tostadas");
+                    Thread.sleep(1000);
+                    VistaOutput.mostrarMensaje("Tostadas: Aceite");
+                    Thread.sleep(1000);
+                    VistaOutput.mostrarMensaje("Tostadas: Sal");
+                    Thread.sleep(1000);
+                    VistaOutput.mostrarMensaje("Tostadas: OK");
+                    //}
+                } catch (InterruptedException e){
+                    VistaOutput.mostrarError("Tostadas", e);
+                }
+            }
+        };
 
+        Thread t = new Thread(r);
+        t.start();
         try{
             // Segundo el cafe
             prepararCafe();
