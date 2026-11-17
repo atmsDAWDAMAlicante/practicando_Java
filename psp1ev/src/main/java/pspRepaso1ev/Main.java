@@ -2,6 +2,9 @@ package pspRepaso1ev;
 
 import pspRepaso1ev.Vista.VistaInput;
 import pspRepaso1ev.Vista.VistaOutput;
+import pspRepaso1ev.Servicios.serviceValidator;
+import pspRepaso1ev.Modelo.*;
+import pspRepaso1ev.Modelo.aCafeTostadas;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -16,17 +19,21 @@ public class Main {
         //serviceLogger.getLogger().info("FlightsApp started successfully");
         String opcion = "";
         int opcionNumero = -5;
-        //serviceValidator.menuOption(option.toLowerCase());
         //int optionArg = args[optionNumber];
 
         while (opcionNumero !=0) {
             opcion = VistaInput.inputMenu();
-            //opcionNumero = serviceValidator.menuOption(option.toLowerCase());
+            opcionNumero = serviceValidator.validarOpcion(opcion.toLowerCase());
+
             switch (opcionNumero) {
                 case 1:
                     VistaOutput.mostrarMensaje(VistaOutput.menu);
                     break;
-
+                case 2:
+                    aCafeTostadas.creacionHilos();
+                    break;
+                case 0:
+                    break;
                 default:
                     break;
             }

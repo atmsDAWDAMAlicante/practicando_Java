@@ -2,7 +2,7 @@ package pspRepaso1ev.Vista;
 
 public class VistaOutput {
 
-    public static String menu = "MENU: ";
+    public static String menu = "MENU: m: Menu // -s: salir";
 
     public static void mostrarMensaje(String mensaje){
         System.out.println(mensaje);
