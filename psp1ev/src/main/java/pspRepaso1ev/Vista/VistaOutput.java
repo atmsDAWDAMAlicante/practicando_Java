@@ -5,7 +5,7 @@ import javax.lang.model.element.Element;
 
 public class VistaOutput {
 
-    public static String menu = "MENU: m: Menu // -s: salir";
+    public static String menu = "MENU: m: Menu // -cre: Crear Hilos // tie: AEMET // -s: salir";
 
     public static void mostrarMensaje(String mensaje){
         System.out.println(mensaje);

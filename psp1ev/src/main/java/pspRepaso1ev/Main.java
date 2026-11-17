@@ -3,7 +3,8 @@ package pspRepaso1ev;
 import pspRepaso1ev.Vista.VistaInput;
 import pspRepaso1ev.Vista.VistaOutput;
 import pspRepaso1ev.Servicios.serviceValidator;
-import pspRepaso1ev.Modelo.CafeyTostadas;
+import pspRepaso1ev.Modelo.*;
+
 
 public class Main {
 
@@ -25,6 +26,9 @@ public class Main {
                     break;
                 case 2:
                     CafeyTostadas.creacionHilos();
+                    break;
+                case 3:
+                    ElTiempo.main();
                     break;
                 case 0:
                     break;
