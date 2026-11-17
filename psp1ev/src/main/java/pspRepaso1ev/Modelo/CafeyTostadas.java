@@ -10,13 +10,14 @@ public class CafeyTostadas {
         //prepararTostadas();
         //Tostadora t = new Tostadora();
         //Thread t = new Thread(new Tostadora());
-        // Abstracta
 
         // CLASE ABSTRACTA
         Runnable r = new Runnable() {
             @Override
             public void run() {
                 try{
+                    Thread yo = Thread.currentThread();
+                    yo.setName("Tostadora");
                     VistaOutput.mostrarMensaje("Tostadas: preparar tostadas");
                     Thread.sleep(1000);
                     VistaOutput.mostrarMensaje("Tostadas: Pan a tostar");
@@ -29,6 +30,10 @@ public class CafeyTostadas {
                     Thread.sleep(1000);
                     VistaOutput.mostrarMensaje("Tostadas: OK");
                     //}
+
+                    if (!yo.isAlive())
+                        VistaOutput.mostrarMensaje("Hilo: " + yo.getName() + " esta " + yo.getState());
+
                 } catch (InterruptedException e){
                     VistaOutput.mostrarError("Tostadas", e);
                 }
@@ -40,10 +45,14 @@ public class CafeyTostadas {
         t.start();
         Thread tContador = new Thread(()->{
             try{
+                Thread.currentThread().setName("Contador");
+                System.out.println("XXXXXXXXXX!"+Thread.currentThread().getName());
                 for (Integer i = 0; i <10; i++){
                     VistaOutput.mostrarMensaje(i.toString());
                     Thread.sleep(1000);
                 }
+                if (!Thread.currentThread().isAlive())
+                    VistaOutput.mostrarMensaje("Hilo: " + Thread.currentThread().getName() + " esta " + Thread.currentThread().getState());
             } catch (InterruptedException e){
                 VistaOutput.mostrarError("main", e);
             }
@@ -61,11 +70,14 @@ public class CafeyTostadas {
         List<Thread> hilos = new ArrayList<>(List.of(t,tContador));
         // Está mal este casting VistaOutput.mostrarArray((Element)hilos);
         VistaOutput.mostrarArray(hilos);
-        while (!t.isAlive() && !tContador.isAlive()) {
+        if (!Thread.currentThread().isAlive())
+            VistaOutput.mostrarMensaje("Hilo: " + Thread.currentThread().getName() + " esta " + Thread.currentThread().getState());
+
+        /*while (!t.isAlive() && !tContador.isAlive()) {
             for (Thread hilo : hilos) {
                 VistaOutput.mostrarMensaje(hilo.getId() + " / " + hilo.getName() + " / " + hilo.getPriority() + " / " + hilo.getState());
             }
-        }
+        }*/
 
     }
 
