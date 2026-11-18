@@ -4,13 +4,13 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class CafeyTostadas {
-    public static void creacionHilos(){
+    public static void creacionHilos(String nombre){
         // SI ESTÁ EL TRY NO HACE FALTA EL TRHOWS
         // Primero las tostadas en clase aparte
         //prepararTostadas();
         //Tostadora t = new Tostadora();
         //Thread t = new Thread(new Tostadora());
-
+        VistaOutput.mostrarMensaje("Hola, " + nombre);
         // CLASE ABSTRACTA
         Runnable r = new Runnable() {
             @Override
