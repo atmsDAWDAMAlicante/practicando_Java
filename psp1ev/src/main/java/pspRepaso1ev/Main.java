@@ -5,6 +5,10 @@ import pspRepaso1ev.Vista.VistaOutput;
 import pspRepaso1ev.Servicios.serviceValidator;
 import pspRepaso1ev.Modelo.*;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 
 public class Main {
 
@@ -32,9 +36,18 @@ public class Main {
                     System.out.println("Error: Falta especificar el nombre del archivo después de -crea");
                 } else {
                     String nombreArchivo = args[1];
-                    // Llama a tu función estática 'crea' pasando el nombre del archivo
+                    // Llama a la función estática 'crea' pasando el nombre del archivo
                     CafeyTostadas.creacionHilos(args[1]);
                 }
+                break;
+
+            case "-DonPepito":
+                // Llama a Hola Don Pepito
+                try {
+                        HolaDonPepito.cogerRuta();
+                } catch (FileNotFoundException e){
+                        VistaOutput.mostrarError("cogerRuta", e);
+                    }
                 break;
 
                     default:
