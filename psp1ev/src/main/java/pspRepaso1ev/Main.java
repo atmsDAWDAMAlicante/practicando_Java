@@ -9,6 +9,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+import java.sql.Connection;
+
 
 public class Main {
 
@@ -49,6 +51,31 @@ public class Main {
                         VistaOutput.mostrarError("cogerRuta", e);
                     }
                 break;
+
+            case "-MusicaDeLos80":
+                try {
+                    MusicaDeLos80.musica80();
+                } catch (Exception e){
+                    VistaOutput.mostrarError("Los 80 en el Main", e);
+                }
+                break;
+
+
+            case "-SoloConnection":
+                try {
+                    dbSoloConnection.soloConnection();
+                    /*if (conn != null){
+                        VistaOutput.mostrarMensaje("MAIN Conexión establecida");
+                    } else {
+                        VistaOutput.mostrarMensaje("MAIN Conexión nula");
+                    }*/
+                } catch (Exception e){
+                    VistaOutput.mostrarError("MAIN Solo Connection", e);
+                }
+                break;
+
+
+
 
                     default:
                         System.out.println("Opción no reconocida: " + args[0]);

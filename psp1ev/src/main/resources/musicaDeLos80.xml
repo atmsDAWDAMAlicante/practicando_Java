@@ -1,0 +1,39 @@
+<!-- OK -->
+<musicaDeLos80>
+    <cd>
+        <grupo>Baron Rojo</grupo>
+        <album>Volumen Brutal</album>
+        <anyo>1982</anyo>
+        <pistas>
+            <pista cara="A">Los rockeros van al infierno</pista>
+            <pista cara="B">Incomunicación</pista>
+        </pistas>
+    </cd>
+    <cd>
+        <grupo>Baron Rojo</grupo>
+        <album>Metalmorfosis</album>
+        <anyo>1983</anyo>
+        <pistas>
+            <pista cara="A">Casi me mato</pista>
+            <pista cara="B">Tierra de vándalos</pista>
+        </pistas>
+    </cd>
+    <cd>
+        <grupo>Siniestro Total</grupo>
+        <album>Menos mal que nos queda Portugal</album>
+        <anyo>1984</anyo>
+        <pistas>
+            <pista cara="A">Tipi, dulce tipi</pista>
+            <pista cara="B">Hey hey Vigo</pista>
+        </pistas>
+    </cd>
+    <cd>
+        <grupo>Gabinete Caligari</grupo>
+        <album>Camino Soria</album>
+        <anyo>1987</anyo>
+        <pistas>
+            <pista cara="A">La sangre de tu tristeza</pista>
+            <pista cara="B">Tocala, Uli</pista>
+        </pistas>
+    </cd>
+</musicaDeLos80>
